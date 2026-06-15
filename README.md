@@ -78,7 +78,7 @@ Try out **NeuraLearn AI** live:
 
 
 ```bash
-git clone https://github.com/Charan970-1/NeuraLearn-AI.git
+git clone https://github.com/Koushika0108/NeuraLearn-AI.git
 ```
 
 ### Frontend Setup
@@ -162,4 +162,4 @@ This project is licensed under the **MIT License** – feel free to use and modi
 ## 📫 Contact
 
 Need help or want to collaborate?  
-📧 Reach out: `charanbandi18@gmail.com`
+📧 Reach out: `koushiak05@gmail.com`
