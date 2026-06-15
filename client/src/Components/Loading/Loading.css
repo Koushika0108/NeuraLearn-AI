@@ -1,0 +1,47 @@
+/* ============================================================
+   LOADING — Themed
+   ============================================================ */
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  width: 100%;
+}
+
+.loading-spinner {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.loading-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent, #111);
+  animation: loading-bounce 0.9s infinite alternate;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loading-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loading-bounce {
+  to {
+    transform: translateY(-14px);
+    opacity: 0.5;
+  }
+}
+
+.loading-text {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}

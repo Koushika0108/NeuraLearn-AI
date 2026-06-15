@@ -1,0 +1,160 @@
+/* ============================================================
+   SIDEBAR — YouTube-style navigation
+   ============================================================ */
+
+.sidebar {
+  position: fixed;
+  top: var(--header-height, 64px);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width, 240px);
+  background: var(--bg-alt, #fff);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 12px;
+  transition: width var(--transition), background var(--transition);
+  z-index: 90;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-collapsed {
+  width: 64px;
+}
+
+.sidebar-collapsed .sidebar-section-label {
+  display: none;
+}
+
+/* Section label */
+.sidebar-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 8px 12px 8px 12px;
+  margin-bottom: 4px;
+  user-select: none;
+}
+
+/* Nav items */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: left;
+  font-family: var(--font);
+  white-space: nowrap;
+}
+
+.sidebar-item:hover {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+.sidebar-item-active {
+  background: var(--accent-soft);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.sidebar-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar-item-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Collapse button */
+.sidebar-collapse-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  color: var(--text-faint);
+  background: none;
+  border: none;
+  border-top: 1px solid var(--border);
+  cursor: pointer;
+  transition: color var(--transition);
+  font-family: var(--font);
+  margin-top: auto;
+}
+
+.sidebar-collapse-btn:hover {
+  color: var(--text);
+}
+
+/* Mobile toggle button */
+.sidebar-mobile-toggle {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 95;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  box-shadow: var(--card-shadow);
+  cursor: pointer;
+}
+
+/* Mobile overlay */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 85;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 91;
+  }
+
+  .sidebar-mobile-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-mobile-toggle {
+    display: flex;
+  }
+
+  .sidebar-overlay {
+    display: block;
+  }
+
+  .sidebar-collapse-btn {
+    display: none;
+  }
+}

@@ -1,0 +1,350 @@
+/* ============================================================
+   HOME / LANDING — Minimal Void / Cosmic Glass
+   ============================================================ */
+
+.home-page {
+  background: var(--bg);
+  color: var(--text);
+  transition: background var(--transition), color var(--transition);
+}
+
+/* Hero */
+.home-hero {
+  padding: 120px 40px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.home-overline {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 20px;
+}
+
+.home-hero-title {
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.home-hero-highlight {
+  position: relative;
+}
+
+[data-theme="minimal"] .home-hero-highlight {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+
+.home-hero-subtitle {
+  font-size: 17px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 580px;
+  margin: 0 auto 40px;
+}
+
+/* CTA Buttons */
+.home-hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 56px;
+}
+
+.home-cta-primary {
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font);
+}
+
+.home-cta-primary:hover {
+  opacity: 0.85;
+  box-shadow: var(--card-shadow);
+}
+
+.home-cta-secondary {
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font);
+}
+
+.home-cta-secondary:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+/* Hero Stats */
+.home-hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.home-stat {
+  text-align: center;
+  padding: 20px 28px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+
+.home-stat:hover {
+  box-shadow: var(--card-hover);
+  transform: translateY(-2px);
+}
+
+.home-stat-value {
+  display: block;
+  font-size: 26px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.home-stat-label {
+  display: block;
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 4px;
+}
+
+/* Sections */
+.home-section {
+  padding: 80px 40px;
+}
+
+.home-section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.home-section-header {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.home-section-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+
+.home-section-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Features Grid */
+.home-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.home-feature-card {
+  padding: 32px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition);
+}
+
+.home-feature-card:hover {
+  box-shadow: var(--card-hover);
+  transform: translateY(-3px);
+}
+
+.home-feature-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.home-feature-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.home-feature-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* How it works */
+.home-how-section {
+  background: var(--accent-soft);
+}
+
+.home-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.home-step-card {
+  padding: 28px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.home-step-card:hover {
+  box-shadow: var(--card-hover);
+}
+
+.home-step-number {
+  font-size: 32px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--text-faint);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.home-step-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.home-step-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Final CTA */
+.home-cta-section {
+  text-align: center;
+}
+
+.home-cta-inner {
+  max-width: 600px;
+}
+
+.home-cta-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.home-cta-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+/* Footer */
+.home-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 40px;
+}
+
+.home-footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-footer-logo {
+  font-weight: 600;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.home-footer-copy {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.home-footer-right {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.home-footer-right a {
+  color: var(--accent-1);
+  text-decoration: none;
+}
+
+.home-footer-right a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-hero {
+    padding: 80px 20px 48px;
+  }
+  .home-hero-title {
+    font-size: 38px;
+  }
+  .home-hero-stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .home-hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .home-section {
+    padding: 48px 20px;
+  }
+  .home-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+}

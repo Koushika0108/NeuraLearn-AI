@@ -1,0 +1,283 @@
+/* ============================================================
+   ASK AI CHAT — Themed
+   ============================================================ */
+
+/* Floating Ask AI Button */
+.askai-fab {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.8rem 1.5rem;
+  font-size: 0.95rem;
+  box-shadow: var(--card-shadow);
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all var(--transition);
+  font-family: var(--font);
+}
+
+.askai-fab:hover {
+  opacity: 0.9;
+  box-shadow: var(--card-hover);
+  transform: translateY(-2px);
+}
+
+/* Chatbox Overlay */
+.askai-chatbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1002;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+/* Chatbox */
+.askai-chatbox {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius) var(--radius) 0 0;
+  box-shadow: var(--card-shadow);
+  width: 440px;
+  max-width: 95vw;
+  max-height: 80vh;
+  margin: 0 2rem 2rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  animation: fadeInUp 0.3s;
+}
+
+.askai-chatbox-header {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.askai-chatbox-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-faint);
+  padding: 0 0.3rem;
+  transition: color var(--transition);
+}
+
+.askai-chatbox-close:hover {
+  color: var(--text);
+}
+
+/* Messages Area */
+.askai-chatbox-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.askai-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  max-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.askai-message {
+  max-width: 90%;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.askai-message.user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: var(--bg);
+  border-bottom-right-radius: 4px;
+}
+
+.askai-message.ai {
+  align-self: flex-start;
+  background: var(--accent-soft);
+  color: var(--text);
+  border-bottom-left-radius: 4px;
+}
+
+/* Markdown in AI messages */
+.askai-message.ai h1,
+.askai-message.ai h2,
+.askai-message.ai h3,
+.askai-message.ai h4 {
+  margin: 0.5rem 0 0.3rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.askai-message.ai p {
+  margin: 0.3rem 0;
+}
+
+.askai-message.ai ul,
+.askai-message.ai ol {
+  margin: 0.3rem 0;
+  padding-left: 1.3rem;
+}
+
+.askai-message.ai li {
+  margin: 0.15rem 0;
+}
+
+.askai-message.ai strong {
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Inline code */
+.inline-code {
+  background: var(--accent-soft);
+  color: var(--accent-1);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+}
+
+/* Code block */
+.code-block-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+  border: 1px solid var(--border);
+}
+
+.code-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--accent);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+}
+
+.code-lang {
+  color: var(--bg);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.code-copy-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--bg);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.72rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.code-copy-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Typing indicator */
+.typing-indicator {
+  display: flex;
+  gap: 4px;
+  padding: 0.3rem 0;
+}
+
+.typing-indicator span {
+  width: 7px;
+  height: 7px;
+  background: var(--text-faint);
+  border-radius: 50%;
+  animation: typingBounce 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-5px); }
+}
+
+/* Input Row */
+.askai-chatbox-input-row {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.askai-chatbox-input {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1rem;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border 0.2s;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+}
+
+.askai-chatbox-input:focus {
+  border-color: var(--accent);
+}
+
+.askai-chatbox-send {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.88rem;
+  transition: opacity var(--transition);
+  font-family: var(--font);
+}
+
+.askai-chatbox-send:hover {
+  opacity: 0.9;
+}
+
+.askai-chatbox-send:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

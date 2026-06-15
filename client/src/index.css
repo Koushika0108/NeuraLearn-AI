@@ -1,0 +1,87 @@
+/* ============================================================
+   NEURALEARN AI — GLOBAL DESIGN SYSTEM
+   Minimal Void Theme
+   ============================================================ */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* --- Minimal Void Theme --- */
+:root {
+  --bg: #fafafa;
+  --bg-alt: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --text-faint: #a0a0a0;
+  --border: #e8e8e8;
+  --accent: #111111;
+  --accent-soft: #f0f0f0;
+  --card-bg: #ffffff;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+  --card-hover: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.05);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --font: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --accent-1: #111111;
+  --accent-2: #555555;
+  --accent-3: #888888;
+
+  --glass-bg: transparent;
+  --glass-border: #e8e8e8;
+  --glass-hover: #f5f5f5;
+
+  --sidebar-width: 240px;
+  --header-height: 64px;
+}
+
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: color var(--transition);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d0d0d0; border-radius: 3px; }
+
+/* --- Links --- */
+a {
+  font-weight: 500;
+  color: var(--accent-1);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover {
+  color: var(--accent-2);
+}
+
+/* --- Headings --- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+/* --- Buttons (Reset) --- */
+button {
+  border: none;
+  background: none;
+  font-family: var(--font);
+  cursor: pointer;
+  font-size: inherit;
+  color: inherit;
+}
